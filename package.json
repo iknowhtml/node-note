@@ -1,0 +1,11 @@
+{
+  "name": "node-notes",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/iknowhtml/node-notes.git",
+  "author": "Aki Gao",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
