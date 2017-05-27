@@ -1,9 +1,6 @@
 {
   "name": "node-notes",
   "version": "1.0.0",
-  "engines": {
-       "node": ">=6.0.0"
-   },
   "main": "app.js",
   "repository": "https://github.com/iknowhtml/node-notes.git",
   "author": "Aki Gao",
@@ -14,6 +11,6 @@
   },
   "devDependencies": {
     "eslint": "^3.19.0",
-    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-node": "^4.2.2"
   }
 }
