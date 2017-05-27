@@ -6,12 +6,13 @@ const yargs = require('yargs');
 
 const notes = require('./notes');
 
+const argv = yargs.argv;
 let command = process.argv[2];
 
 switch (command) {
   case 'add':
     console.log('Adding new note.');
-
+    notes.addNote(argv.title, argv.body);``
     break;
 
   case 'list':
@@ -20,9 +21,12 @@ switch (command) {
 
   case 'read':
     console.log('Reading note.');
+    notes.readNote(argv.title);
+    break;
 
   case 'remove':
     console.log('Removing note.');
+    notes.removeNote(argv.title);
     break;
 
   default:
