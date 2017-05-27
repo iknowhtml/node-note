@@ -11,8 +11,18 @@ let command = process.argv[2];
 
 switch (command) {
   case 'add':
-    console.log('Adding new note.');
-    notes.addNote(argv.title, argv.body);
+    console.log('Adding new note...');
+    let note = notes.addNote(argv.title, argv.body);
+    if (note === undefined) {
+      console.log('Note already exists.');
+    } else {
+      console.log(
+        'Note added!\n',
+        '--\n',
+        `Title: ${note.title}\n`,
+        `Body: ${note.body}`
+      );
+    }
     break;
 
   case 'list':
