@@ -5,20 +5,20 @@ const addNote = (title, body) => {
 };
 
 const getAll = () => {
-    console.log('Getting all notes');
-}
+  console.log('Getting all notes');
+};
 
-const readNote = (title) => {
-    console.log('Reading note ', title);
-}
+const readNote = title => {
+  console.log('Reading note ', title);
+};
 
-const removeNote = (title) => {
+const removeNote = title => {
   console.log('Deleting note', title);
-}
+};
 
 module.exports = {
   addNote,
   getAll,
   readNote,
-  removeNote,
-}
+  removeNote
+};
