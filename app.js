@@ -4,15 +4,36 @@ const yargs = require('yargs');
 
 const notes = require('./notes');
 
-const argv = yargs.argv;
+const titleOptions = {
+  describe: 'Title of note',
+  demand: true,
+  alias: 't'
+};
+
+const bodyOptions = {
+  describe: 'Body of note',
+  demand: true,
+  alias: 'b'
+};
+
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: titleOptions,
+    body: bodyOptions
+  })
+  .command('list', 'List all notes')
+  .command('read', 'Read a note', {
+    title: titleOptions
+  })
+  .command('remove', 'Remove a note', {
+    title: titleOptions
+  })
+  .help().argv;
+
 let command = process.argv[2];
 
-const logNote = (note) =>
-console.log(
-  '--\n',
-  `Title: ${note.title}\n`,
-  `Body: ${note.body}`
-);
+const logNote = note =>
+  console.log('--\n', `Title: ${note.title}\n`, `Body: ${note.body}`);
 
 switch (command) {
   case 'add': {
@@ -21,7 +42,7 @@ switch (command) {
     if (note === undefined) {
       console.log('Note already exists.');
     } else {
-      logNote(note)
+      logNote(note);
     }
     break;
   }
