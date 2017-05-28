@@ -37,7 +37,8 @@ const getAll = () => {
 };
 
 const readNote = title => {
-  console.log('Reading note ', title);
+  const notes = fetchNotes();
+  return notes.filter(note => note.title === title)[0];
 };
 
 const removeNote = title => {
