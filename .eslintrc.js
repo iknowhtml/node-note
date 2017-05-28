@@ -1,7 +1,12 @@
 module.exports = {
-  extends: ['eslint:recommended', 'pligins:node/recommended'],
-  plugins: [],
+  plugins: ['node'],
+  extends: ['eslint:recommended', 'plugin:node/recommended'],
   rules: {
-    'node/exports-style': ['error', 'module.exports']
+    'node/exports-style': ['error', 'module.exports'],
+    'no-console' : 0
+  },
+  env: {
+    es6: true,
+    node: true
   }
 };
