@@ -9,7 +9,6 @@ let command = process.argv[2];
 
 const logNote = (note) =>
 console.log(
-  'Note found!\n',
   '--\n',
   `Title: ${note.title}\n`,
   `Body: ${note.body}`
@@ -28,7 +27,10 @@ switch (command) {
   }
 
   case 'list': {
-    console.log('Listing all notes.');
+    console.log('Listing all notes...');
+    const allNotes = notes.getAll();
+    console.log(`Printing ${allNotes.length} note(s).`);
+    allNotes.forEach(note => logNote(note));
     break;
   }
 
@@ -38,6 +40,7 @@ switch (command) {
     if (note === undefined) {
       console.log('Note not found');
     } else {
+      console.log('Note found!\n');
       logNote(note);
     }
     break;
